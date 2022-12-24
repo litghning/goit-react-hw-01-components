@@ -3,9 +3,8 @@ import css from './Statistics.module.css';
 import {StatisticsItem} from '../StatisticsItem/StatisticsItem'
 
 export const Statistics = ({title, stats}) => {
-    const titleUp = title.toUpperCase();
     return <section className={css.statistics}>
-    <h2 className={css.title}>{titleUp}</h2>
+    {title && (<h2>{title}</h2>)} 
     <ul className={css.statList}>
       {stats.map(({label, percentage, id}) => (
         <StatisticsItem
